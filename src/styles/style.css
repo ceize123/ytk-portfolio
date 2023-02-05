@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html, body {
+  background-color: #2D3031;
+  color: white;
+}
+
+@keyframes menu-click {
+  0% {
+    transform: rotateX(0deg);
+  }
+  60% {
+    transform: rotateX(60deg);
+  }
+}
+.menu-activate {
+  animation-name: menu-click;
+  animation-duration: 0.3s;
+}
+
+/*# sourceMappingURL=style.css.map */
