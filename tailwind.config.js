@@ -7,8 +7,13 @@ module.exports = {
 			secondary: '#C3CCCE',
 			yellow: '#FAC44B',
 			green: '#27CF87',
+			white: '#FFF'
 		},
-		extend: {},
+		extend: {
+			pb: {
+				'65%': '65%',
+			}
+		},
 	},
 	plugins: [],
 }

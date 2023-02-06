@@ -1,9 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,700;1,400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 html, body {
   background-color: #2D3031;
   color: white;
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.stroke-yellow {
+  text-shadow: -1px -1px 0 #FAC44B, 1px -1px 0 #FAC44B, -1px 1px 0 #FAC44B, 1px 1px 0 #FAC44B;
+}
+
+.stroke-green {
+  text-shadow: -1px -1px 0 #27CF87, 1px -1px 0 #27CF87, -1px 1px 0 #27CF87, 1px 1px 0 #27CF87;
+}
+
+.stroke-white {
+  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
 }
 
 @keyframes menu-click {
@@ -17,6 +36,20 @@ html, body {
 .menu-activate {
   animation-name: menu-click;
   animation-duration: 0.3s;
+}
+
+nav {
+  transition: all 0.2s ease;
+}
+
+.hero-section {
+  min-height: 90vh;
+}
+.hero-section .knight {
+  border-radius: 50%;
+  width: 473px;
+  height: 473px;
+  box-shadow: inset 6px 6px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
 /*# sourceMappingURL=style.css.map */

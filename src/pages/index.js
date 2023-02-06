@@ -1,9 +1,12 @@
 import Image from 'next/image'
+import HeroSection from '../components/Hero-sec'
+import MissionSec from '../components/Mission-sec'
 
 export default function Home() {
   return (
     <>
-      <h1 className='text-3xl text-green-200'>123123123123123123</h1>
+		<HeroSection />
+		<MissionSec />
     </>
   )
 }
