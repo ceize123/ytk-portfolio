@@ -54,3 +54,15 @@ nav {
 	}
 }
 // Hero
+
+// Footer
+footer {
+	div:hover .icon{
+		color: #27CF87;
+		transform: translateY(-5px);
+	}
+	.icon {
+		transition: all .3s ease-in-out;
+	}
+}
+// Footer

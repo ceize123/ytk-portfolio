@@ -17,7 +17,7 @@ export default function Navbar() {
 
 	return (
 		<header className='sticky top-0 flex justify-center flex-col items-center z-50'>
-			<div className='flex justify-between items-center px-8 my-4 container relative'>
+			<div className='flex justify-between items-center px-10 my-4  w-screen relative'>
 				<div className='logo cursor-pointer'>
 					<Image
 						src={Logo}
@@ -33,13 +33,12 @@ export default function Navbar() {
 						alt='menu' />
 				</div>
 			</div>
-			<nav className={`bg-yellow w-full container absolute -bottom-12 ${toggleMenu ? 'translate-y-0': 'opacity-0 -translate-y-6'}`}>
+			<nav className={`bg-yellow w-full absolute -bottom-12 ${toggleMenu ? 'translate-y-0': 'opacity-0 -translate-y-6'}`}>
 				<ul>
 					<li>123</li>
 					<li>1233</li>
 				</ul>
 			</nav>
-			
 		</header>
 	)
 }
