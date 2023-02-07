@@ -50,6 +50,11 @@ export async function getStaticProps({params}) {
 }
 
 export default function ProjectDetails({ project }) {
+	if (!project) {
+		return (
+			<>Loading...</>
+		)
+	}
 	const {banner, overview, time, tools, goal, challenges, solutions, result} = project.fields
 	return (
 		<div className='project-page max-w-7xl mx-auto'>
@@ -126,7 +131,6 @@ export default function ProjectDetails({ project }) {
 					
 				</div>
 			</div>
-			
 		</div>
 	)
 }
