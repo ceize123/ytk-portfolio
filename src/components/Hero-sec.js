@@ -18,9 +18,9 @@ export default function HeroSection() {
 	}, []);
 	
 	return (
-		<section className='hero-section pt-24 relative flex justify-center items-center overflow-hidden'>
+		<section className='hero-section relative flex justify-center items-center flex-col lg:flex-row overflow-hidden'>
 			<div
-				className='text-yellow absolute left-16 mb-24'
+				className='text-yellow lg:absolute 3xl:mr-[35%] xl:mr-[45%] lg:mr-[50%] xl:mb-24 lg:mb-[40%] mb-8'
 				style={{
 					transform: `translateX(-${scrollTop / 10}px)`,
 					opacity: `${(100 - scrollTop / 5) / 100}`
@@ -30,16 +30,8 @@ export default function HeroSection() {
 					<span className='stroke-yellow text-primary'>Hi! I&#39;m</span> Yi-Tso
 				</h1>
 			</div>
-			<div className='knight bg-white flex justify-center items-center mx-auto'>
-				<Image
-					src={knightGif}
-					width={371}
-					height={360}
-					alt='Knight Gif'
-				/>
-			</div>
 			<div
-				className='text-green absolute right-5 mt-24 text-right'
+				className='text-green lg:absolute 3xl:ml-[40%] xl:ml-[55%] lg:ml-[30%] xl:mt-24 lg:mt-[40%] text-right lg:mb-0 mb-8'
 				style={{
 					transform: `translateX(${scrollTop / 10}px)`,
 					opacity: `${(100 - scrollTop / 5) / 100}`
@@ -51,6 +43,14 @@ export default function HeroSection() {
 				<h1 className='text-2xl'>
 					<span className='stroke-green text-primary'>and a powerful</span> knight
 				</h1>
+			</div>
+			<div className='knight bg-white flex justify-center items-center mx-auto'>
+				<Image
+					src={knightGif}
+					width={371}
+					height={360}
+					alt='Knight Gif'
+				/>
 			</div>
 		</section>
 	)

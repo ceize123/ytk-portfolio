@@ -35,7 +35,7 @@ export default function Navbar() {
 				</div>
 			</div>
 		</header>
-		<nav className={`bg-yellow w-full px-10 z-10 fixed ${toggleMenu ? 'translate-y-0': 'opacity-0 -translate-y-10'}`}>
+		<nav className={`bg-yellow w-full px-10 fixed ${toggleMenu ? 'z-10 translate-y-0': '-z-10 opacity-0 -translate-y-10'}`}>
 			<ul className='text-4xl py-10 text-center'>
 				<li className='leading-normal'>Tools</li>
 				<li className='leading-normal'>Projects</li>

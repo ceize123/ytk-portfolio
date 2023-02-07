@@ -12,7 +12,10 @@ module.exports = {
 		extend: {
 			pb: {
 				'65%': '65%',
-			}
+			},
+			screens: {
+        '3xl': '1600px',
+      },
 		},
 	},
 	plugins: [],
