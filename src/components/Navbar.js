@@ -16,8 +16,8 @@ export default function Navbar() {
 	}
 
 	return (
-		<header className='sticky top-0 flex justify-center flex-col items-center'>
-			<div className='flex justify-between items-center px-8 my-4 container relative z-10'>
+		<header className='sticky top-0 flex justify-center flex-col items-center z-50'>
+			<div className='flex justify-between items-center px-8 my-4 container relative'>
 				<div className='logo cursor-pointer'>
 					<Image
 						src={Logo}
