@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +13,34 @@ h1 {
   font-size: 48px;
 }
 
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 1023px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 639px) {
+  h1 {
+    font-size: 24px;
+  }
+}
 .stroke-yellow {
   text-shadow: -1px -1px 0 #FAC44B, 1px -1px 0 #FAC44B, -1px 1px 0 #FAC44B, 1px 1px 0 #FAC44B;
 }
@@ -52,6 +80,12 @@ nav {
   box-shadow: inset 6px 6px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
+@media only screen and (max-width: 639px) {
+  .hero-section .knight {
+    width: 300px;
+    height: 300px;
+  }
+}
 footer .icon-block:hover .icon {
   color: #27CF87;
   transform: translateY(-5px);

@@ -40,14 +40,17 @@ export default function Navbar() {
 				</div>
 			</div>
 			</header>
-			<nav className={`bg-yellow w-full px-10 z-20 fixed ${toggleMenu ? 'translate-y-0': 'opacity-0 -translate-y-10'}`}>
+			<nav className={`bg-yellow w-full px-10 z-20 fixed ${toggleMenu ? 'translate-y-0': '-z-10 opacity-0 -translate-y-10'}`}>
 				<ul className='text-4xl py-10 text-center'>
 					<li className='leading-normal'>Tools</li>
 					<li className='leading-normal'>Projects</li>
 					<li className='leading-normal'>Contact</li>
 				</ul>
 			</nav>
-			<div className={`backdrop-blur-sm bg-white/10 fixed top-0 z-10 w-full h-screen ${toggleMenu ? 'block' : 'hidden'}`}>
+			<div
+				className={`backdrop-blur-sm bg-white/10 fixed top-0 z-10 w-full h-screen ${toggleMenu ? 'block' : 'hidden'}`}
+				onClick={() => {setToggleMenu(false)}}
+			>
 			</div>
 		</>
 	)

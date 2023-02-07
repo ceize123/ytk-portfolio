@@ -22,9 +22,9 @@ export async function getStaticProps() {
 export default function Home({ projects }) {
 	console.log(projects)
 	return (
-	<>
+	<main>
 		<HeroSection />
 		<MissionSec projects={projects} />
-	</>
+	</main>
 	)
 }
