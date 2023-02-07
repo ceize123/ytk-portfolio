@@ -36,8 +36,7 @@ export async function getStaticProps({params}) {
 			}
 		}
 	}
-	console.log('abc')
-	console.log(items)
+
 	return {
 		props: { project: items[0] },
 		revalidate: 10
