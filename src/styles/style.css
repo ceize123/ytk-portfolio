@@ -52,7 +52,7 @@ nav {
   box-shadow: inset 6px 6px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
-footer div:hover .icon {
+footer .icon-block:hover .icon {
   color: #27CF87;
   transform: translateY(-5px);
 }
