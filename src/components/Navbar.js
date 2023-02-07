@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Logo from '../image/logo.png'
 import MenuIcon from '../image/menu.png'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Navbar() {
 	const [toggleMenu, setToggleMenu] = useState(false)
@@ -15,9 +15,15 @@ export default function Navbar() {
 		setToggleMenu(!toggleMenu)
 	}
 
+	useEffect(() => {
+		if (toggleMenu) document.body.style.overflow = 'hidden'
+		else document.body.style.overflow = 'unset'
+  }, [toggleMenu ]);
+
 	return (
-		<header className='sticky top-0 flex justify-center flex-col items-center z-50'>
-			<div className='flex justify-between items-center px-8 my-4 container relative'>
+		<>
+		<header className='sticky top-0 flex justify-center flex-col items-center z-50 bg-primary'>
+			<div className='flex justify-between items-center w-full px-10 my-4 relative z-10'>
 				<div className='logo cursor-pointer'>
 					<Image
 						src={Logo}
@@ -33,13 +39,16 @@ export default function Navbar() {
 						alt='menu' />
 				</div>
 			</div>
-			<nav className={`bg-yellow w-full container absolute -bottom-12 ${toggleMenu ? 'translate-y-0': 'opacity-0 -translate-y-6'}`}>
-				<ul>
-					<li>123</li>
-					<li>1233</li>
+			</header>
+			<nav className={`bg-yellow w-full px-10 z-20 fixed ${toggleMenu ? 'translate-y-0': 'opacity-0 -translate-y-10'}`}>
+				<ul className='text-4xl py-10 text-center'>
+					<li className='leading-normal'>Tools</li>
+					<li className='leading-normal'>Projects</li>
+					<li className='leading-normal'>Contact</li>
 				</ul>
 			</nav>
-			
-		</header>
+			<div className={`backdrop-blur-sm bg-white/10 fixed top-0 z-10 w-full h-screen ${toggleMenu ? 'block' : 'hidden'}`}>
+			</div>
+		</>
 	)
 }
