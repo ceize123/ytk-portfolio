@@ -20,13 +20,13 @@ export default function HeroSection() {
 	return (
 		<section className='hero-section relative flex justify-center items-center flex-col lg:flex-row overflow-hidden'>
 			<div
-				className='text-yellow lg:absolute 3xl:mr-[35%] xl:mr-[45%] lg:mr-[50%] xl:mb-24 lg:mb-[40%] md:mb-8 mb-4'
+				className='text-yellow lg:absolute 3xl:mr-[35%] xl:mr-[45%] lg:mr-[50%] md:mr-0 mr-10 xl:mb-24 lg:mb-[40%] md:mb-8 mb-4'
 				style={{
 					transform: `translateX(-${scrollTop / 10}px)`,
 					opacity: `${(100 - scrollTop / 6) / 100}`
 				}}
 			>
-				<h1 className='md:text-6xl sm:text-5xl text-4xl'>
+				<h1 className='md:text-6xl text-5xl'>
 					<span className='stroke-yellow text-primary'>Hi! I&#39;m</span> Yi-Tso
 				</h1>
 			</div>
@@ -37,7 +37,7 @@ export default function HeroSection() {
 					opacity: `${(100 - scrollTop / 6) / 100}`
 				}}
 			>
-				<h1 className='leading-tight'>
+				<h1 className='md:text-5xl text-3xl'>
 					a Full-Stack developer
 				</h1>
 				<h1 className='text-2xl'>

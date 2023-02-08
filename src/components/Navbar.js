@@ -40,11 +40,11 @@ export default function Navbar() {
 				</div>
 			</div>
 			</header>
-			<nav className={`bg-yellow w-full px-10 z-20 fixed ${toggleMenu ? 'translate-y-0': '-z-10 opacity-0 -translate-y-10'}`}>
-				<ul className='text-4xl py-10 text-center'>
-					<li className='leading-normal'>Tools</li>
-					<li className='leading-normal'>Projects</li>
-					<li className='leading-normal'>Contact</li>
+			<nav className={`bg-yellow w-full z-20 fixed ${toggleMenu ? 'translate-y-0': '-z-10 opacity-0 -translate-y-10'}`}>
+				<ul className='text-2xl py-10 text-center'>
+					<li className='py-4 leading-normal'>Tools</li>
+					<li className='py-4 leading-normal'>Projects</li>
+					<li className='py-4 leading-normal'>Contact</li>
 				</ul>
 			</nav>
 			<div
