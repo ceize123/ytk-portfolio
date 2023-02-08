@@ -3,6 +3,7 @@ import overviewIcon from '../image/overview.png'
 import executionIcon from '../image/execution.png'
 import resultIcon from '../image/result.png'
 import ImageTemplate from '../components/Image-template'
+import Skeleton from '../components/Skeleton'
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID, // id
@@ -48,11 +49,8 @@ export async function getStaticProps({params}) {
 }
 
 export default function WorkDetails({ work }) {
-	if (!work) {
-		return (
-			<>Loading...</>
-		)
-	}
+	if (!work) return <Skeleton />
+
 	const {banner, overview, time, tools, challenges, solutions, result} = work.fields
 	return (
 		<section className='work-page max-w-7xl mx-auto'>
