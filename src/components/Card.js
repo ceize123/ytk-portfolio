@@ -5,7 +5,7 @@ export default function Card({ info }) {
 	const { title, slug, thumbnail, tools, description } = info
 
 	return (
-		<div className='col-span-1 xl:mx-20 md:mx-6 mx-0'>
+		<div className='col-span-1 xl:mx-16 md:mx-4 mx-0'>
 			<div className='relative w-full h-0 pb-[65%] overflow-hidden rounded'>
 				<Link href={`/${slug}`}>
 					<Image
@@ -16,18 +16,20 @@ export default function Card({ info }) {
 					/>
 				</Link>
 			</div>
-			<h2 className='3xl:text-3xl text-2xl mt-3'>{title}</h2>
-			<p className='3xl:text-2xl text-xl'>{description}</p>
-			<div className='flex flex-wrap'>
-				{tools.map((tool, idx) => {
-					return (
-						<div key={idx}
-							className='mt-2 mr-3 bg-green rounded-md py-1 px-2 text-primary'
-						>
-							<p className='3xl:text-xl md:text-base text-xs'>{tool}</p>
-						</div>
-					)
-				})}
+			<div>
+				<h2 className='3xl:text-3xl text-2xl mt-3'>{title}</h2>
+				<p className='3xl:text-2xl text-xl mt-2'>{description}</p>
+				<div className='flex flex-wrap'>
+					{tools.map((tool, idx) => {
+						return (
+							<div key={idx}
+								className='mt-2 mr-3 bg-green rounded-md py-1 px-2 text-primary'
+							>
+								<p className='3xl:text-xl md:text-base text-xs'>{tool}</p>
+							</div>
+						)
+					})}
+				</div>
 			</div>
 		</div>
 	)

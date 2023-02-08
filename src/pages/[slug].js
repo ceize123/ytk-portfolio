@@ -1,10 +1,8 @@
 import { createClient } from 'contentful'
-import Image from 'next/image'
 import overviewIcon from '../image/overview.png'
-import goalIcon from '../image/goal.png'
 import executionIcon from '../image/execution.png'
 import resultIcon from '../image/result.png'
-import Icon from '../components/Icon'
+import ImageTemplate from '../components/Image-template'
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID, // id
@@ -59,21 +57,14 @@ export default function ProjectDetails({ project }) {
 	return (
 		<div className='project-page max-w-7xl mx-auto'>
 			<div>
-				<Image
-						src={`https:${banner.fields.file.url}`}
-						width='0'
-						height='0'
-						sizes='100vw'
-						className='w-full h-auto'
-						alt={banner.fields.title}
-					/>
+				<ImageTemplate url={`https:${banner.fields.file.url}`} alt={banner.fields.title} />
 			</div>
 			{/* Sticky Button for small size screen */}
 			<div className='md:hidden block sticky top-20 py-4 text-center bg-primary'>
 				<button className='border rounded border-green p-2 hover:bg-green hover:text-primary transition-all'>View Project</button>
 			</div>
 
-			<div className='grid md:grid-cols-8 grid-cols-1 xl:mx-16 mx-8 lg:mt-16 mt-8'>
+			<div className='grid md:grid-cols-8 grid-cols-1 mx-16 md:8 lg:mt-16 mt-8'>
 				<div className='col-span-2 mt-2'>
 					<div className='md:sticky md:top-24 md:block flex'>
 						<div className='grow'>
@@ -84,7 +75,7 @@ export default function ProjectDetails({ project }) {
 							<h2>Tool</h2>
 							{tools.map((tool, idx) => {
 								return (
-									<p key={idx}>{tool}</p>
+									<p key={idx} className='mt-2'>{tool}</p>
 								)
 							})}
 						</div>
@@ -96,7 +87,9 @@ export default function ProjectDetails({ project }) {
 				<div className='col-span-6 grid grid-cols-1 gap-y-24 mt-16 md:mt-0'>
 					<div>
 						<div className='flex items-center'>
-							<Icon data={overviewIcon} />
+							<div className='md:w-12 w-8'>
+								<ImageTemplate url={overviewIcon} alt='icon' />
+							</div>
 							<h1 className='ml-2'>Overview</h1>
 						</div>
 						<div className='mt-4'>
@@ -105,16 +98,9 @@ export default function ProjectDetails({ project }) {
 					</div>
 					<div>
 						<div className='flex items-center'>
-							<Icon data={goalIcon} />
-							<h1 className='ml-2'>Goal</h1>
-						</div>
-						<div className='mt-4'>
-							<p>{goal}</p>
-						</div>
-					</div>
-					<div>
-						<div className='flex items-center'>
-							<Icon data={executionIcon} />
+							<div className='md:w-12 w-8'>
+								<ImageTemplate url={executionIcon} alt='icon' />
+							</div>
 							<h1 className='ml-2'>Execution</h1>
 						</div>
 						<div className='mt-4'>
@@ -128,7 +114,9 @@ export default function ProjectDetails({ project }) {
 					</div>
 					<div>
 						<div className='flex items-center'>
-							<Icon data={resultIcon} />
+							<div className='md:w-12 w-8'>
+								<ImageTemplate url={resultIcon} alt='icon' />
+							</div>
 							<h1 className='ml-2'>Result</h1>
 						</div>
 						<div className='mt-4'>
