@@ -50,6 +50,8 @@ export default function HeroSection() {
 					src={knightGif}
 					width={371}
 					height={360}
+					loading="eager"
+					priority={true}
 					alt='Knight Gif'
 				/>
 			</div>

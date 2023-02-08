@@ -53,7 +53,7 @@ export default function WorkDetails({ work }) {
 
 	const {banner, overview, time, tools, challenges, solutions, result} = work.fields
 	return (
-		<section className='work-page max-w-7xl mx-auto'>
+		<section className='work-page max-w-7xl mx-auto pb-24'>
 			<div>
 				<ImageTemplate url={`https:${banner.fields.file.url}`} alt={banner.fields.title} />
 			</div>
