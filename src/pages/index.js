@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import { createClient } from 'contentful'
 import HeroSection from '../components/Hero-sec'
 import MissionSec from '../components/Mission-sec'
+import WeaponSec from '../components/Weapon-sec'
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -24,6 +24,7 @@ export default function Home({ projects }) {
 	return (
 	<main>
 		<HeroSection />
+		<WeaponSec />	
 		<MissionSec projects={projects} />
 	</main>
 	)

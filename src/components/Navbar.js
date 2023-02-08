@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Logo from '../image/logo.png'
 import MenuIcon from '../image/menu.png'
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 export default function Navbar() {
 	const [toggleMenu, setToggleMenu] = useState(false)
@@ -24,13 +25,15 @@ export default function Navbar() {
 		<>
 		<header className='sticky top-0 flex justify-center flex-col items-center z-50 bg-primary'>
 			<div className='flex justify-between items-center w-full px-10 my-4 relative z-10'>
-				<div className='logo cursor-pointer'>
-					<Image
-						src={Logo}
-						width={51}
-						height={51}
-						alt='logo' />
-				</div>
+				<Link href='/' onClick={() => {setToggleMenu(false)}}>
+					<div className='logo cursor-pointer'>
+						<Image
+							src={Logo}
+							width={51}
+							height={51}
+							alt='logo' />
+					</div>
+				</Link>	
 				<div className='menu cursor-pointer' onClick={(e) => { handleMenu(e)}}>
 					<Image
 						src={MenuIcon}
@@ -42,9 +45,21 @@ export default function Navbar() {
 			</header>
 			<nav className={`bg-yellow w-full z-20 fixed ${toggleMenu ? 'translate-y-0': '-z-10 opacity-0 -translate-y-10'}`}>
 				<ul className='text-2xl py-10 text-center'>
-					<li className='py-4 leading-normal'>Tools</li>
-					<li className='py-4 leading-normal'>Projects</li>
-					<li className='py-4 leading-normal'>Contact</li>
+					<li className='py-4 leading-normal'>
+						<Link href='/#tool-sec' onClick={() => {setToggleMenu(false)}} scroll={false}>
+							Tools
+						</Link>
+					</li>
+					<li className='py-4 leading-normal'>
+						<Link href='/#mission-sec' onClick={() => {setToggleMenu(false)}} scroll={false}>
+							Projects
+						</Link>
+					</li>
+					<li className='py-4 leading-normal' onClick={() => {setToggleMenu(false)}} scroll={false}>
+						<Link href='#contact'>
+							Contact
+						</Link>
+					</li>
 				</ul>
 			</nav>
 			<div

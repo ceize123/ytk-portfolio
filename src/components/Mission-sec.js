@@ -2,7 +2,7 @@ import Card from './Card'
 
 export default function MissionSec({projects}) {
 	return (
-		<section className='lg:mx-20 md:mx-10 mx-8 my-24'>
+		<section className='lg:mx-20 md:mx-10 mx-8 py-24' id='mission-sec'>
 			<div className='container mx-auto'>
 				<h1 className='text-center'>
 					Mission <span className='stroke-white text-primary'>I have</span> Accomplished
