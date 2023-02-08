@@ -68,22 +68,29 @@ export default function ProjectDetails({ project }) {
 						alt={banner.fields.title}
 					/>
 			</div>
+			{/* Sticky Button for small size screen */}
+			<div className='md:hidden block sticky top-20 py-4 text-center bg-primary'>
+				<button className='border rounded border-green p-2 hover:bg-green hover:text-primary transition-all'>View Project</button>
+			</div>
+
 			<div className='grid md:grid-cols-8 grid-cols-1 xl:mx-16 mx-8 lg:mt-16 mt-8'>
-				<div className='col-span-2 mt-2 sm:flex md:block text-left sm:text-center md:text-left'>
-					<div className='grow'>
-						<h2>Time</h2>
-						<p>{time}</p>
-					</div>
-					<div className='mt-5 sm:mt-0 md:mt-5 grow'>
-						<h2>Tool</h2>
-						{tools.map((tool, idx) => {
-							return (
-								<p key={idx}>{tool}</p>
-							)
-						})}
-					</div>
-					<div className='mt-5 sm:mt-0 md:mt-5 grow'>
-						<button className='border rounded border-green p-2 hover:bg-green hover:text-primary transition-all'>View Project</button>
+				<div className='col-span-2 mt-2'>
+					<div className='md:sticky md:top-24 md:block flex'>
+						<div className='grow'>
+							<h2>Time</h2>
+							<p>{time}</p>
+						</div>
+						<div className='md:mt-5 mt-0 grow'>
+							<h2>Tool</h2>
+							{tools.map((tool, idx) => {
+								return (
+									<p key={idx}>{tool}</p>
+								)
+							})}
+						</div>
+						<div className='md:mt-5 hidden md:block'>
+							<button className='border rounded border-green p-2 hover:bg-green hover:text-primary transition-all'>View Project</button>
+						</div>
 					</div>
 				</div>
 				<div className='col-span-6 grid grid-cols-1 gap-y-24 mt-16 md:mt-0'>
@@ -128,7 +135,6 @@ export default function ProjectDetails({ project }) {
 							<p>{result}</p>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>

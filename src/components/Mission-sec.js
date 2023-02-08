@@ -7,7 +7,7 @@ export default function MissionSec({projects}) {
 				<h1 className='text-center'>
 					Mission <span className='stroke-white text-primary'>I have</span> Accomplished
 				</h1>
-				<div className='grid md:grid-cols-2 gap-x-2 md:gap-x-0 gap-y-8 sm:mt-12 mt-5'>
+				<div className='grid md:grid-cols-2 gap-x-2 md:gap-x-0 gap-y-10 sm:mt-12 mt-5'>
 					{projects.map((item) => {
 						return (
 							<Card key={item.sys.id} info={item.fields} />
