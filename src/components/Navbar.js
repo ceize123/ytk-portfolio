@@ -1,11 +1,14 @@
-import Image from 'next/image'
 import Logo from '../image/logo.png'
 import MenuIcon from '../image/menu.png'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import ImageTemplate from './Image-template'
+import { useRouter } from 'next/router'
 
 export default function Navbar() {
 	const [toggleMenu, setToggleMenu] = useState(false)
+	const router = useRouter()
+	const path = router.route !== '/' ? router.asPath : ''
 
 	const handleMenu = (e) => {
 		e.target.classList.add('menu-activate')
@@ -24,22 +27,14 @@ export default function Navbar() {
 	return (
 		<>
 		<header className='sticky top-0 flex justify-center flex-col items-center z-50 bg-primary'>
-			<div className='flex justify-between items-center w-full px-10 my-4 relative z-10'>
+			<div className='flex justify-between items-center w-full px-6 sm:my-4 my-3 relative z-10'>
 				<Link href='/' onClick={() => {setToggleMenu(false)}}>
-					<div className='logo cursor-pointer'>
-						<Image
-							src={Logo}
-							width={51}
-							height={51}
-							alt='logo' />
+					<div className='logo cursor-pointer sm:w-12 w-8'>
+						<ImageTemplate url={Logo} alt='logo' />
 					</div>
 				</Link>	
-				<div className='menu cursor-pointer' onClick={(e) => { handleMenu(e)}}>
-					<Image
-						src={MenuIcon}
-						width={48}
-						height={48}
-						alt='menu' />
+				<div className='menu cursor-pointer sm:w-12 w-8' onClick={(e) => { handleMenu(e) }}>
+					<ImageTemplate url={MenuIcon} alt='menu' />
 				</div>
 			</div>
 			</header>
@@ -51,12 +46,12 @@ export default function Navbar() {
 						</Link>
 					</li>
 					<li className='py-4 leading-normal'>
-						<Link href='/#mission-sec' onClick={() => {setToggleMenu(false)}} scroll={false}>
-							Projects
+						<Link href='/#work-sec' onClick={() => {setToggleMenu(false)}} scroll={false}>
+							Works
 						</Link>
 					</li>
-					<li className='py-4 leading-normal' onClick={() => {setToggleMenu(false)}} scroll={false}>
-						<Link href='#contact'>
+					<li className='py-4 leading-normal'>
+						<Link href={`${path}/#contact`} onClick={() => {setToggleMenu(false)}} scroll={false}>
 							Contact
 						</Link>
 					</li>

@@ -26,7 +26,7 @@ p {
 	font-size: 24px;
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1279px) {
 	h1 {
 		font-size: 32px;
 	}
@@ -43,6 +43,10 @@ p {
 @media only screen and (max-width: 639px) {
 	h1 {
 		font-size: 24px;
+	}
+
+	h2 {
+		font-size: 18px;
 	}
 }
 
