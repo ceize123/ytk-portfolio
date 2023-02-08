@@ -2,7 +2,7 @@ import { FiLinkedin, FiGithub } from 'react-icons/fi';
 
 export default function Footer() {
 	return (
-		<footer className='py-8'>
+		<footer className='pt-24 pb-8'>
 			<div className='md:fixed md:bottom-0 md:left-6 flex justify-center md:block mb-2 md:mb-0'>
 				<div className='icon-block cursor-pointer md:mb-3 p-2'>
 					<FiGithub className='icon text-yellow text-2xl' />

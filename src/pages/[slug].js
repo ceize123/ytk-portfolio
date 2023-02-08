@@ -61,7 +61,7 @@ export default function WorkDetails({ work }) {
 			</div>
 			{/* Sticky Button for small size screen */}
 			<div className='md:hidden block sticky top-20 py-4 text-center bg-primary'>
-				<button className='border rounded border-green p-2 hover:bg-green hover:text-primary transition-all'>View Work</button>
+				<button className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'>View Work</button>
 			</div>
 
 			<div className='grid md:grid-cols-8 grid-cols-1 2xl:mx-0 mx-16 md:8 lg:mt-16 mt-8'>
@@ -80,7 +80,7 @@ export default function WorkDetails({ work }) {
 							})}
 						</div>
 						<div className='md:mt-5 hidden md:block'>
-							<button className='border rounded border-green p-2 hover:bg-green hover:text-primary transition-all'>View Work</button>
+							<button className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'>View Work</button>
 						</div>
 					</div>
 				</div>
