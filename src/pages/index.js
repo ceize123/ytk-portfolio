@@ -13,19 +13,19 @@ export async function getStaticProps() {
 
 	return {
 		props: {
-			projects: res.items
+			works: res.items
 		},
 		revalidate: 10
 	}
 }
 
-export default function Home({ projects }) {
-	console.log(projects)
+export default function Home({ works }) {
+	console.log(works)
 	return (
 	<main>
 		<HeroSection />
 		<WeaponSec />	
-		<MissionSec projects={projects} />
+		<MissionSec works={works} />
 	</main>
 	)
 }

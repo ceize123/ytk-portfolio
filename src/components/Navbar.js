@@ -46,8 +46,8 @@ export default function Navbar() {
 						</Link>
 					</li>
 					<li className='py-4 leading-normal'>
-						<Link href='/#mission-sec' onClick={() => {setToggleMenu(false)}} scroll={false}>
-							Projects
+						<Link href='/#work-sec' onClick={() => {setToggleMenu(false)}} scroll={false}>
+							Works
 						</Link>
 					</li>
 					<li className='py-4 leading-normal'>

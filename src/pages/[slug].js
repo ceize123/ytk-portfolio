@@ -42,29 +42,29 @@ export async function getStaticProps({params}) {
 	}
 
 	return {
-		props: { project: items[0] },
+		props: { work: items[0] },
 		revalidate: 10
 	}
 }
 
-export default function ProjectDetails({ project }) {
-	if (!project) {
+export default function WorkDetails({ work }) {
+	if (!work) {
 		return (
 			<>Loading...</>
 		)
 	}
-	const {banner, overview, time, tools, goal, challenges, solutions, result} = project.fields
+	const {banner, overview, time, tools, challenges, solutions, result} = work.fields
 	return (
-		<div className='project-page max-w-7xl mx-auto'>
+		<section className='work-page max-w-7xl mx-auto'>
 			<div>
 				<ImageTemplate url={`https:${banner.fields.file.url}`} alt={banner.fields.title} />
 			</div>
 			{/* Sticky Button for small size screen */}
 			<div className='md:hidden block sticky top-20 py-4 text-center bg-primary'>
-				<button className='border rounded border-green p-2 hover:bg-green hover:text-primary transition-all'>View Project</button>
+				<button className='border rounded border-green p-2 hover:bg-green hover:text-primary transition-all'>View Work</button>
 			</div>
 
-			<div className='grid md:grid-cols-8 grid-cols-1 mx-16 md:8 lg:mt-16 mt-8'>
+			<div className='grid md:grid-cols-8 grid-cols-1 2xl:mx-0 mx-16 md:8 lg:mt-16 mt-8'>
 				<div className='col-span-2 mt-2'>
 					<div className='md:sticky md:top-24 md:block flex'>
 						<div className='grow'>
@@ -80,7 +80,7 @@ export default function ProjectDetails({ project }) {
 							})}
 						</div>
 						<div className='md:mt-5 hidden md:block'>
-							<button className='border rounded border-green p-2 hover:bg-green hover:text-primary transition-all'>View Project</button>
+							<button className='border rounded border-green p-2 hover:bg-green hover:text-primary transition-all'>View Work</button>
 						</div>
 					</div>
 				</div>
@@ -125,6 +125,6 @@ export default function ProjectDetails({ project }) {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	)
 }

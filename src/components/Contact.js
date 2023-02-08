@@ -1,8 +1,8 @@
 export default function Contact() {
 	return (
 		<section id='contact'>
-			<div>
-				<h1>Contact</h1>
+			<div className='text-center'>
+				<h1 className='stroke-white text-primary'>Contact</h1>
 			</div>
 		</section>
 	)
