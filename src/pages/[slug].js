@@ -67,11 +67,11 @@ export default function WorkDetails({ work }) {
 			<div className='grid md:grid-cols-8 grid-cols-1 2xl:mx-0 mx-16 md:8 lg:mt-16 mt-8'>
 				<div className='col-span-2 mt-2'>
 					<div className='md:sticky md:top-24 md:block flex'>
-						<div className='grow'>
+						<div className='mr-16 md:mr-0'>
 							<h2>Time</h2>
 							<p>{time}</p>
 						</div>
-						<div className='md:mt-5 mt-0 grow'>
+						<div className='md:mt-5 mt-0'>
 							<h2>Tool</h2>
 							{tools.map((tool, idx) => {
 								return (
