@@ -22,7 +22,7 @@ export default function WeaponSec() {
 				<h1 className='text-center lg:text-5xl text-4xl'>
 					<span className='stroke-white text-primary'>My</span> Weapons
 				</h1>
-				<div className='sm:mt-12 mt-5 md:w-3/4 w-full mx-auto md:p-3 p-2 border rounded grid lg:grid-cols-3 grid-cols-2'>
+				<div className='sm:mt-12 mt-5 md:w-3/4 w-full mx-auto md:p-3 p-2 border border-green rounded grid lg:grid-cols-3 grid-cols-2'>
 					<IconDiv component={<SiJavascript />} text='JavaScript' />
 					<IconDiv component={<SiReact />} text='React.js' />
 					<IconDiv component={<TbBrandNextjs />} text='Next.js' />

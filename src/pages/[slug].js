@@ -52,19 +52,34 @@ export async function getStaticProps({params}) {
 export default function WorkDetails({ work }) {
 	if (!work) return <Skeleton />
 
-	const { banner, overview, url, time, tools, challenges, solutions, result } = work.fields
-	console.log(result)
+	const { banner, overview, url, time, tools, challenges, solutions, result, mobileSupport, inProgress } = work.fields
+	const execution = []
+	for (let idx in challenges) {
+		execution.push({
+			challenge: challenges[idx],
+			solution: solutions[idx]
+		})
+	}
+	
 	return (
 		<section className='work-page max-w-7xl mx-auto pb-24'>
 			<div>
 				<ImageTemplate url={`https:${banner.fields.file.url}`} alt={banner.fields.title} />
 			</div>
+
 			{/* Sticky Button for small size screen */}
 			<div className='md:hidden block sticky sm:top-20 top-12 py-4 text-center bg-primary'>
 				<Link href={url} target='_blank'>
-					<button className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'>View Work</button>
+					<button
+						className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'
+						disabled={inProgress}
+					>
+						{!inProgress ? 'View Work' : 'In Progress'}
+					</button>
 				</Link>
+				{!mobileSupport && <p className='text-sm mt-2 text-center text-red'>Mobile Devices not Supported</p>}
 			</div>
+			{/* Sticky Button for small size screen */}
 
 			<div className='grid md:grid-cols-8 grid-cols-1 2xl:mx-0 sm:mx-16 mx-8 md:8 lg:mt-16 mt-8'>
 				<div className='col-span-2 mt-2'>
@@ -83,8 +98,14 @@ export default function WorkDetails({ work }) {
 						</div>
 						<div className='md:mt-10 hidden md:block'>
 							<Link href={url} target='_blank'>
-								<button className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'>View Work</button>
+								<button
+									className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'
+									disabled={inProgress}
+								>
+									{!inProgress ? 'View Work' : 'In Progress'}
+								</button>
 							</Link>
+							{!mobileSupport && <p className='text-sm w-2/3 mt-2 text-red'>Mobile Devices not Supported</p>}
 						</div>
 					</div>
 				</div>
@@ -107,17 +128,20 @@ export default function WorkDetails({ work }) {
 							</div>
 							<h1 className='ml-2'>Execution</h1>
 						</div>
-						{/* {challenges.map(() => {
-
-						})} */}
-						<div className='mt-4'>
-							<h2>Challenges</h2>
-							<p>{challenges}</p>
-						</div>
-						<div className='mt-4'>
-							<h2>Solutions</h2>
-							<p>{solutions}</p>
-						</div>
+						{execution.map((item, idx) => {
+							return (
+								<div className={`${idx !== 0 ? 'mt-12' : 'mt-4'} border-l pl-5`} key={idx}>
+									<div>
+										<h2 className='text-yellow'>Challenge</h2>
+										<p>{item.challenge}</p>
+									</div>
+									<div className='mt-4'>
+										<h2 className='text-green'>Solution</h2>
+										<p>{item.solution}</p>
+									</div>
+								</div>
+							)
+						})}
 					</div>
 					<div>
 						<div className='flex items-center'>
@@ -127,10 +151,11 @@ export default function WorkDetails({ work }) {
 							<h1 className='ml-2'>Result</h1>
 						</div>
 						<div className='mt-4'>
-							<video controls muted autoPlay loop>
+							{result !== undefined
+								?	<video controls muted autoPlay loop>
 										<source src={`https:${result[0].fields.file.url}`} type='video/mp4'/>
-							</video>
-							{/* <p>{result}</p> */}
+								</video>
+								: <p>In Progress</p>}
 						</div>
 					</div>
 				</div>

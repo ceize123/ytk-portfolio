@@ -40,21 +40,21 @@ export default function Navbar() {
 			</header>
 			<nav className={`bg-darkYellow w-full z-20 fixed ${toggleMenu ? 'translate-y-0': '-z-10 opacity-0 -translate-y-10'}`}>
 				<ul className='text-2xl text-center'>
-					<li className='py-4 leading-normal hover:bg-yellow'>
-						<Link href='/#tool-sec' onClick={() => {setToggleMenu(false)}} scroll={false}>
-							Tools
-						</Link>
-					</li>
-					<li className='py-4 leading-normal hover:bg-yellow'>
-						<Link href='/#work-sec' onClick={() => {setToggleMenu(false)}} scroll={false}>
-							Works
-						</Link>
-					</li>
-					<li className='py-4 leading-normal hover:bg-yellow'>
-						<Link href={`${path}/#contact`} onClick={() => {setToggleMenu(false)}} scroll={false}>
-							Contact
-						</Link>
-					</li>
+					<Link href='/#tool-sec' onClick={() => {setToggleMenu(false)}} scroll={false}>
+						<li className='py-4 leading-normal hover:bg-yellow'>
+								Tools
+						</li>
+					</Link>
+					<Link href='/#work-sec' onClick={() => {setToggleMenu(false)}} scroll={false}>
+						<li className='py-4 leading-normal hover:bg-yellow'>
+								Works
+						</li>
+					</Link>
+					<Link href={`${path}/#contact`} onClick={() => {setToggleMenu(false)}} scroll={false}>
+						<li className='py-4 leading-normal hover:bg-yellow'>
+								Contact
+						</li>
+					</Link>
 				</ul>
 			</nav>
 			<div
