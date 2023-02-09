@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Card({ info }) {
-	const { title, slug, thumbnail, tools, description } = info
+	const { title, slug, thumbnail, tools } = info
 
 	return (
 		<div className='col-span-1 xl:mx-16 md:mx-4 mx-0'>
@@ -19,7 +19,6 @@ export default function Card({ info }) {
 			</Link>
 			<div>
 				<h2 className='3xl:text-3xl text-2xl mt-3'>{title}</h2>
-				<p className='3xl:text-2xl text-xl mt-2'>{description}</p>
 				<div className='flex flex-wrap'>
 					{tools.slice(0, 4).map((tool, idx) => {
 						return (
