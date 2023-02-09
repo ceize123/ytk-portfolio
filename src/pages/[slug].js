@@ -60,28 +60,28 @@ export default function WorkDetails({ work }) {
 				<ImageTemplate url={`https:${banner.fields.file.url}`} alt={banner.fields.title} />
 			</div>
 			{/* Sticky Button for small size screen */}
-			<div className='md:hidden block sticky top-20 py-4 text-center bg-primary'>
+			<div className='md:hidden block sticky sm:top-20 top-12 py-4 text-center bg-primary'>
 				<Link href={url} target='_blank'>
 					<button className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'>View Work</button>
 				</Link>
 			</div>
 
-			<div className='grid md:grid-cols-8 grid-cols-1 2xl:mx-0 sm:mx-16 mx-4 md:8 lg:mt-16 mt-8'>
+			<div className='grid md:grid-cols-8 grid-cols-1 2xl:mx-0 sm:mx-16 mx-8 md:8 lg:mt-16 mt-8'>
 				<div className='col-span-2 mt-2'>
-					<div className='md:sticky md:top-24 md:block flex'>
-						<div className='mr-16 md:mr-0'>
+					<div className='md:sticky md:top-24 md:block flex justify-around'>
+						<div>
 							<h2>Time</h2>
-							<p>{time}</p>
+							<p className='text-base'>{time}</p>
 						</div>
-						<div className='md:mt-5 mt-0'>
+						<div className='md:mt-10 mt-0'>
 							<h2>Tool</h2>
 							{tools.map((tool, idx) => {
 								return (
-									<p key={idx} className='mt-2'>{tool}</p>
+									<p key={idx} className='mt-2 text-base'>{tool}</p>
 								)
 							})}
 						</div>
-						<div className='md:mt-5 hidden md:block'>
+						<div className='md:mt-10 hidden md:block'>
 							<Link href={url} target='_blank'>
 								<button className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'>View Work</button>
 							</Link>

@@ -24,7 +24,7 @@ export default function Card({ info }) {
 					{tools.slice(0, 4).map((tool, idx) => {
 						return (
 							<div key={idx}
-								className='mt-2 mr-3 bg-green rounded-md py-2 px-3 text-primary'
+								className='mt-2 mr-2 bg-green rounded-md py-2 px-3 text-primary'
 							>
 								<p className='3xl:text-xl md:text-base text-xs'>{tool}</p>
 							</div>

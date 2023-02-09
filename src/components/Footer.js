@@ -14,7 +14,7 @@ export default function Footer() {
 				<div className='h-20 w-px bg-secondary mx-auto hidden md:block'></div>
 			</div>
 			<div>
-				<p className='text-center'>&copy; Copyright 2023, <span className='text-green hover:text-yellow transition'>Yi-Tso Kuo</span>. All Rights Reserved.</p>
+				<p className='text-center text-base'>&copy; Copyright 2023, <span className='text-green hover:text-yellow transition'>Yi-Tso Kuo</span>. All Rights Reserved.</p>
 			</div>
 		</footer>
 	)
