@@ -8,7 +8,8 @@ module.exports = {
 			yellow: '#FAC44B',
 			darkYellow: '#E8B031',
 			green: '#27CF87',
-			white: '#FFF'
+			white: '#FFF',
+			red: '#DC143C'
 		},
 		extend: {
 			screens: {
