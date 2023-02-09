@@ -4,6 +4,7 @@ import executionIcon from '../image/execution.png'
 import resultIcon from '../image/result.png'
 import ImageTemplate from '../components/Image-template'
 import Skeleton from '../components/Skeleton'
+import Link from 'next/link'
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID, // id
@@ -51,7 +52,8 @@ export async function getStaticProps({params}) {
 export default function WorkDetails({ work }) {
 	if (!work) return <Skeleton />
 
-	const {banner, overview, time, tools, challenges, solutions, result} = work.fields
+	const { banner, overview, url, time, tools, challenges, solutions, result } = work.fields
+	console.log(result)
 	return (
 		<section className='work-page max-w-7xl mx-auto pb-24'>
 			<div>
@@ -59,10 +61,12 @@ export default function WorkDetails({ work }) {
 			</div>
 			{/* Sticky Button for small size screen */}
 			<div className='md:hidden block sticky top-20 py-4 text-center bg-primary'>
-				<button className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'>View Work</button>
+				<Link href={url} target='_blank'>
+					<button className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'>View Work</button>
+				</Link>
 			</div>
 
-			<div className='grid md:grid-cols-8 grid-cols-1 2xl:mx-0 mx-16 md:8 lg:mt-16 mt-8'>
+			<div className='grid md:grid-cols-8 grid-cols-1 2xl:mx-0 sm:mx-16 mx-4 md:8 lg:mt-16 mt-8'>
 				<div className='col-span-2 mt-2'>
 					<div className='md:sticky md:top-24 md:block flex'>
 						<div className='mr-16 md:mr-0'>
@@ -78,7 +82,9 @@ export default function WorkDetails({ work }) {
 							})}
 						</div>
 						<div className='md:mt-5 hidden md:block'>
-							<button className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'>View Work</button>
+							<Link href={url} target='_blank'>
+								<button className='border rounded border-green py-2 px-3 hover:bg-green hover:text-primary transition-all'>View Work</button>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -101,6 +107,9 @@ export default function WorkDetails({ work }) {
 							</div>
 							<h1 className='ml-2'>Execution</h1>
 						</div>
+						{/* {challenges.map(() => {
+
+						})} */}
 						<div className='mt-4'>
 							<h2>Challenges</h2>
 							<p>{challenges}</p>
@@ -118,7 +127,10 @@ export default function WorkDetails({ work }) {
 							<h1 className='ml-2'>Result</h1>
 						</div>
 						<div className='mt-4'>
-							<p>{result}</p>
+							<video controls muted autoPlay loop>
+										<source src={`https:${result[0].fields.file.url}`} type='video/mp4'/>
+							</video>
+							{/* <p>{result}</p> */}
 						</div>
 					</div>
 				</div>
