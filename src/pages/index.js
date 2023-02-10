@@ -2,6 +2,9 @@ import { createClient } from 'contentful'
 import HeroSection from '../components/Hero-sec'
 import MissionSec from '../components/Mission-sec'
 import WeaponSec from '../components/Weapon-sec'
+import { useEffect } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -21,11 +24,18 @@ export async function getStaticProps() {
 
 export default function Home({ works }) {
 	console.log(works)
+
+	useEffect(() => {
+		AOS.init({
+			offset: 150,
+			duration : 1000
+		})
+	}, [works])
 	return (
 	<main>
 		<HeroSection />
-		<WeaponSec />	
-		<MissionSec works={works} />
+		<WeaponSec aos='fade-up'/>	
+		<MissionSec works={works} aos='fade-up'/>
 	</main>
 	)
 }
