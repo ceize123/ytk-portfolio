@@ -10,21 +10,19 @@ export default function App({ Component, pageProps }) {
 		<>
 			<Head>
 					<title>Yi-Tso Kuo</title>
-					<meta name="viewport" content="initial-scale=1, width=device-width" />
+					<meta name='viewport' content='initial-scale=1, width=device-width' />
 			</Head>
 			<Script
-				strategy='lazyOnload'
-				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+				strategy='afterInteractive'
+				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
 			/>
-			<Script strategy='lazyOnload' id='script'>
+			<Script strategy='afterInteractive' id='google-analytics'>
 				{`
 					window.dataLayer = window.dataLayer || [];
 					function gtag(){dataLayer.push(arguments);}
 					gtag('js', new Date());
 
-					gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-						page_path: window.location.pathname,
-					});
+					gtag('config', '${process.env.GA_MEASUREMENT_ID}');
 				`}
 			</Script>
 
