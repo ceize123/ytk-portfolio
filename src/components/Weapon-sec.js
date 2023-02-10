@@ -15,9 +15,9 @@ import {
 import { TbBrandNextjs, TbBrandVue } from 'react-icons/tb'
 import IconDiv from './Tool-icon'
 
-export default function WeaponSec({aos}) {
+export default function WeaponSec() {
 	return (
-		<section id='tool-sec' className='mx-8 py-24' data-aos={aos}>
+		<section id='tool-sec' className='mx-8 py-24'>
 			<div className='max-w-7xl mx-auto'>
 				<h1 className='text-center lg:text-5xl text-4xl'>
 					<span className='stroke-white text-primary'>My</span> Weapons

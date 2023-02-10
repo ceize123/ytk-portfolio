@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Card({ info }) {
+export default function Card({ info, num }) {
 	const { title, slug, thumbnail, tools } = info
 
 	return (
-		<div className='col-span-1 xl:mx-16 md:mx-4 mx-0'>
+		<div className='col-span-1 xl:mx-16 md:mx-4 mx-0' data-aos={num % 2 === 0 ?  'fade-right': 'fade-left'} >
 			<Link href={`/${slug}`}>
 				<div className='relative w-full h-0 pb-[65%] overflow-hidden rounded'>
 						<Image

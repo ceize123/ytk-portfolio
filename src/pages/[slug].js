@@ -5,6 +5,9 @@ import resultIcon from '../image/result.png'
 import ImageTemplate from '../components/Image-template'
 import Skeleton from '../components/Skeleton'
 import Link from 'next/link'
+import { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID, // id
@@ -50,6 +53,12 @@ export async function getStaticProps({params}) {
 }
 
 export default function WorkDetails({ work }) {
+	useEffect(() => {
+		AOS.init({
+			offset: 100,
+			duration : 1000
+		})
+	}, [work])
 	if (!work) return <Skeleton />
 
 	const { banner, overview, url, time, tools, challenges, solutions, result, mobileSupport, inProgress } = work.fields
@@ -63,7 +72,7 @@ export default function WorkDetails({ work }) {
 	
 	return (
 		<section className='work-page max-w-7xl mx-auto pb-24'>
-			<div>
+			<div data-aos='zoom-out-up'>
 				<ImageTemplate url={`https:${banner.fields.file.url}`} alt={banner.fields.title} />
 			</div>
 
@@ -82,7 +91,9 @@ export default function WorkDetails({ work }) {
 			{/* Sticky Button for small size screen */}
 
 			<div className='grid md:grid-cols-8 grid-cols-1 2xl:mx-0 sm:mx-16 mx-8 md:8 lg:mt-16 mt-8'>
-				<div className='col-span-2 mt-2'>
+
+				{/* Left Section */}
+				<aside className='col-span-2 mt-2'>
 					<div className='md:sticky md:top-24 md:block flex justify-around'>
 						<div>
 							<h2>Time</h2>
@@ -108,9 +119,12 @@ export default function WorkDetails({ work }) {
 							{!mobileSupport && <p className='text-sm w-2/3 mt-2 text-red'>Mobile Devices not Supported</p>}
 						</div>
 					</div>
-				</div>
+				</aside>
+
+				{/* Right Section */}
 				<div className='col-span-6 grid grid-cols-1 gap-y-24 mt-16 md:mt-0'>
-					<div>
+					{/* Overview */}
+					<div data-aos='fade-up'>
 						<div className='flex items-center'>
 							<div className='md:w-12 w-8'>
 								<ImageTemplate url={overviewIcon} alt='icon' />
@@ -121,7 +135,9 @@ export default function WorkDetails({ work }) {
 							<p>{overview}</p>
 						</div>
 					</div>
-					<div>
+					{/* Overview */}
+					{/* Execution */}
+					<div data-aos='fade-up'>
 						<div className='flex items-center'>
 							<div className='md:w-12 w-8'>
 								<ImageTemplate url={executionIcon} alt='icon' />
@@ -143,7 +159,9 @@ export default function WorkDetails({ work }) {
 							)
 						})}
 					</div>
-					<div>
+					{/* Execution */}
+					{/* Result */}
+					<div data-aos='fade-up'>
 						<div className='flex items-center'>
 							<div className='md:w-12 w-8'>
 								<ImageTemplate url={resultIcon} alt='icon' />
@@ -158,6 +176,7 @@ export default function WorkDetails({ work }) {
 								: <p>In Progress</p>}
 						</div>
 					</div>
+					{/* Result */}
 				</div>
 			</div>
 		</section>
