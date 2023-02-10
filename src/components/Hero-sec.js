@@ -46,7 +46,7 @@ export default function HeroSection() {
 			</div>
 			<div className='knight bg-white flex justify-center items-center mx-auto' >
 				<Image
-					className='sm:w-auto w-full'
+					className='sm:w-3/4 w-full'
 					src={knightGif}
 					width={371}
 					height={360}
