@@ -1,8 +1,8 @@
 import Card from './Card'
 
-export default function MissionSec({works}) {
+export default function MissionSec({works, aos}) {
 	return (
-		<section className='lg:mx-20 md:mx-12 mx-8 py-24' id='work-sec'>
+		<section className='lg:mx-20 md:mx-12 mx-8 py-24' id='work-sec' data-aos={aos}>
 			<div className='container mx-auto'>
 				<h1 className='text-center lg:text-5xl text-4xl'>
 					Missions <span className='stroke-white text-primary'>I have</span> Completed

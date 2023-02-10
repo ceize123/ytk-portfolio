@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "aos": "^3.0.0-beta.6",
     "autoprefixer": "^10.4.13",
     "contentful": "^9.3.0",
     "eslint": "8.33.0",
