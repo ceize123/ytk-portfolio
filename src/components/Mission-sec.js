@@ -8,9 +8,9 @@ export default function MissionSec({works}) {
 					Missions <span className='stroke-white text-primary'>I have</span> Completed
 				</h1>
 				<div className='grid md:grid-cols-2 gap-x-2 md:gap-x-0 gap-y-10 sm:mt-12 mt-5'>
-					{works.map((item, idx) => {
+					{works.map((item) => {
 						return (
-							<Card key={item.sys.id} info={item.fields} num={idx} />
+							<Card key={item.sys.id} info={item.fields} />
 						)
 					})}
 				</div>
