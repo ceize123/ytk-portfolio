@@ -72,7 +72,7 @@ export default function WorkDetails({ work }) {
 	
 	return (
 		<section className='work-page max-w-7xl mx-auto pb-24'>
-			<div data-aos='zoom-out-up'>
+			<div data-aos='fade-down'>
 				<ImageTemplate url={`https:${banner.fields.file.url}`} alt={banner.fields.title} />
 			</div>
 
