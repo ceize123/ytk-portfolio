@@ -7,7 +7,6 @@ html, body {
   color: white;
   font-family: "Ubuntu", sans-serif;
   scroll-behavior: smooth;
-  overflow: hidden;
 }
 
 h1 {
