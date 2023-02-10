@@ -3,8 +3,8 @@ import HeroSection from '../components/Hero-sec'
 import MissionSec from '../components/Mission-sec'
 import WeaponSec from '../components/Weapon-sec'
 import { useEffect } from 'react'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -27,15 +27,15 @@ export default function Home({ works }) {
 
 	useEffect(() => {
 		AOS.init({
-			offset: 150,
+			offset: 100,
 			duration : 1000
 		})
 	}, [works])
 	return (
 	<main>
 		<HeroSection />
-		<WeaponSec aos='fade-up'/>	
-		<MissionSec works={works} aos='fade-up'/>
+		<WeaponSec />	
+		<MissionSec works={works} />
 	</main>
 	)
 }

@@ -44,7 +44,7 @@ export default function HeroSection() {
 					<span className='stroke-green text-primary'>and a powerful</span> knight
 				</h1>
 			</div>
-			<div className='knight bg-white flex justify-center items-center mx-auto'>
+			<div className='knight bg-white flex justify-center items-center mx-auto' >
 				<Image
 					className='sm:w-auto w-full'
 					src={knightGif}
