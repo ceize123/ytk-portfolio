@@ -124,20 +124,20 @@ export default function WorkDetails({ work }) {
 				{/* Right Section */}
 				<div className='col-span-6 grid grid-cols-1 gap-y-24 mt-16 md:mt-0'>
 					{/* Overview */}
-					<div data-aos='fade-up'>
+					<div>
 						<div className='flex items-center'>
 							<div className='md:w-12 w-8'>
 								<ImageTemplate url={overviewIcon} alt='icon' />
 							</div>
 							<h1 className='ml-2'>Overview</h1>
 						</div>
-						<div className='mt-4'>
+						<div className='mt-4' data-aos='fade-up'>
 							<p>{overview}</p>
 						</div>
 					</div>
 					{/* Overview */}
 					{/* Execution */}
-					<div data-aos='fade-up'>
+					<div>
 						<div className='flex items-center'>
 							<div className='md:w-12 w-8'>
 								<ImageTemplate url={executionIcon} alt='icon' />
@@ -146,7 +146,7 @@ export default function WorkDetails({ work }) {
 						</div>
 						{execution.map((item, idx) => {
 							return (
-								<div className={`${idx !== 0 ? 'mt-12' : 'mt-4'} border-l pl-5`} key={idx}>
+								<div className={`${idx !== 0 ? 'mt-12' : 'mt-4'} border-l pl-5`} key={idx} data-aos='fade-up'>
 									<div>
 										<h2 className='text-yellow'>Challenge</h2>
 										<p>{item.challenge}</p>
@@ -161,14 +161,14 @@ export default function WorkDetails({ work }) {
 					</div>
 					{/* Execution */}
 					{/* Result */}
-					<div data-aos='fade-up'>
+					<div>
 						<div className='flex items-center'>
 							<div className='md:w-12 w-8'>
 								<ImageTemplate url={resultIcon} alt='icon' />
 							</div>
 							<h1 className='ml-2'>Result</h1>
 						</div>
-						<div className='mt-4'>
+						<div className='mt-4' data-aos='fade-up'>
 							{result !== undefined
 								?	<video controls muted autoPlay loop>
 										<source src={`https:${result[0].fields.file.url}`} type='video/mp4'/>
