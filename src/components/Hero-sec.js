@@ -41,7 +41,7 @@ export default function HeroSection() {
 					a Full-Stack developer
 				</h1>
 				<h1 className='text-2xl'>
-					<span className='stroke-green text-primary'>and a powerful</span> knight
+					<span className='stroke-green text-primary'>and a dedicated</span> knight
 				</h1>
 			</div>
 			<div className='knight bg-white flex justify-center items-center mx-auto' >
