@@ -23,8 +23,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ works }) {
-	console.log(works)
-
 	useEffect(() => {
 		AOS.init({
 			offset: 100,
