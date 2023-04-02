@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }) {
         <meta property='og:type' content='website' />
         <meta
           property='og:image'
-          content='https://firebasestorage.googleapis.com/v0/b/yi-tso.appspot.com/o/thumbnail.png?alt=media&token=52109be5-552e-4453-866a-8dce1d734deb'
+          content='https://firebasestorage.googleapis.com/v0/b/yi-tso.appspot.com/o/thumbnail2.png?alt=media&token=a81e5751-94c0-43d3-a40b-e6fc3eb056fa'
         />
         <meta property='og:url' content='https://www.ytkuo.dev/' />
       </Head>
