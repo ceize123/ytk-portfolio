@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
         <meta name='viewport' content='initial-scale=1, width=device-width' />
         <meta property='og:title' content='Yi-Tso Kuo Portfolio' />
         <meta property='og:type' content='website' />
-        <meta property='og:image' content='../image/thumbnail.png' />
+        <meta property='og:image' content='/image/thumbnail.png' />
         <meta property='og:url' content='https://www.ytkuo.dev/' />
       </Head>
       <Script
